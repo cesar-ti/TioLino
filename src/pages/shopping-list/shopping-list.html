@@ -1,0 +1,61 @@
+<!--
+  Generated template for the ShoppingListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Nova Venda</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-button small color="secondary" [disabled]="begin" (click)="generateCode()">Iniciar</button>
+  <button ion-button small color="danger" [disabled]="!finish" (click)="finishInvoice()">Encerrar</button>
+  <button ion-button small color="light" [disabled]="!begin" (click)="insertLoose()">Avulso</button>
+  <button ion-button block (click)="readProduct()" [disabled]="!begin">Ler Código</button>  
+
+    Nota Fiscal: {{invoice.nvc_code}}<br/>
+    Total: {{invoice.iv_valueinvoice}}<br/>
+    Troco: {{invoice.iv_change}}<br/>
+    Aviso: {{msg}}<br/>
+    
+    <ion-grid>
+      <ion-row style="background-color: #DCDCDC">
+        <ion-col col-4>
+          Código
+        </ion-col>
+        <ion-col col-4>
+          Nome
+        </ion-col>
+        <ion-col col-3>
+          Valor
+        </ion-col>
+        <ion-col col-1>          
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let product of products">
+        <ion-col col-4>
+          {{product.prd_code}}
+        </ion-col>
+        <ion-col col-4>
+          {{product.prd_name}}
+        </ion-col>
+        <ion-col col-3>
+          {{product.prp_price}}
+        </ion-col>
+        <ion-col col-1>            
+          <button (click)="removeProductInvoice(product)">X</button>          
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+</ion-content>

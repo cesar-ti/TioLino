@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Relatório de Vendas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <form #formCtrl="ngForm">
+      <ion-item>
+        <ion-label>Data</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate1" name="myDate1" required></ion-datetime>    
+      </ion-item>
+      <button ion-button block color="secondary" [disabled]="!formCtrl.form.valid" (click)="searchInvoice()">Pesquisar</button>
+    </form>
+  </ion-list>
+
+  <p>Valor total do dia: {{total_value}}</p>
+
+  <ion-grid>
+    <ion-row style="background-color: #DCDCDC">
+      <ion-col col-3>
+        Código
+      </ion-col>
+      <ion-col col-2>
+        Qtd
+      </ion-col>
+      <ion-col col-7>
+        Data de Registro
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let invoice of invoices">
+      <ion-col col-3>
+        <a (click)="redirectDetalInvoice(invoice)">{{invoice.nvc_code}}</a>
+      </ion-col>
+      <ion-col col-2>
+        {{invoice.qtd}}
+      </ion-col>
+      <ion-col col-7>
+        {{invoice.nvc_regdate | date:"dd/MM/yyyy HH:mm:ss"}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

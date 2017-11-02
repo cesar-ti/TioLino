@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- /*{ title: 'Inicial', component: HomePage },
+  { title: 'Nova Venda', component: ShoppingListPage },
+  { title: 'Relatório de Vendas', component: ListPage },
+  { title: 'Relatório de Estoque', component: ListProductPage },
+  { title: 'Cadastrar Produto', component: RegisterPage },
+  { title: 'Inserir Quantidade', component: RegisterQtdProductPage },
+  { title: 'Atualizar Preço', component: UpdateProductPage } ,     
+  { title: 'Atualizar Estoque', component: UpdateQtdProductPage }  */ -->
+
+  <h2>Página Inicial</h2> 
+
+  <button ion-button class="botao" color="light" (click)="goListShopping()">Nova Venda</button>
+
+  <button ion-button class="botao" color="light" (click)="goList()">Relatório de Vendas</button>
+
+  <button ion-button class="botao" color="light" (click)="goListProduct()">Relatório de Estoque</button>
+
+  <button ion-button class="botao" color="light" (click)="goRegisterProduct()">Cadastrar Produto</button>
+
+  <button ion-button class="botao" color="light" (click)="goRegisterQtdProduct()">Inserir Quantidade</button>
+
+  <button ion-button class="botao" color="light" (click)="goUpdateProduct()">Atualizar Preço</button>
+
+  <button ion-button class="botao" color="light" (click)="goUpdateQtdProduct()">Atualizar Estoque</button>
+
+  
+
+</ion-content>

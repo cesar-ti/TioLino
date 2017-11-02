@@ -1,0 +1,44 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Cadastro de Produtos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <button ion-button block (click)="readProduct()">Ler Código</button>
+
+  <form (ngSubmit)="saveProduct()" #formCtrl="ngForm">
+    <ion-list>
+      
+        <ion-item>
+          <ion-label color="primary" floating>Código</ion-label>
+          <ion-input type="text" [(ngModel)] = "product.prd_code" name="prd_code" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" floating>Nome</ion-label>
+          <ion-input type="text" [(ngModel)] = "product.prd_name" name="prd_name" required></ion-input>
+        </ion-item>        
+        <ion-item>
+          <ion-label color="primary">Novo Preço</ion-label>
+          <ion-input type="text" [(ngModel)] = "product.prp_price" name="prp_price" placeholder="00.00" required></ion-input>
+        </ion-item>
+      
+    </ion-list>
+
+    <button ion-button block color="secondary" [disabled]="!formCtrl.form.valid">Cadastrar Produto</button>
+
+  </form>
+
+</ion-content>

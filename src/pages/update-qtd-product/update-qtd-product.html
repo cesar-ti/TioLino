@@ -1,0 +1,49 @@
+<!--
+  Generated template for the UpdateQtdProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Atualizar Estoque</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-grid>
+      <ion-row style="background-color: #DCDCDC">
+        <ion-col col-4>
+          Código
+        </ion-col>
+        <ion-col col-3>
+          Estoque
+        </ion-col>
+        <ion-col col-3>
+          Notas
+        </ion-col>
+        <ion-col col-2>
+          
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let item of products">
+        <ion-col col-4>
+          {{item.prd_code}}
+        </ion-col>
+        <ion-col col-3>
+          {{item.pq_qtd}}
+        </ion-col>
+        <ion-col col-3>
+          {{item.qtd_invoice}}
+        </ion-col>
+        <ion-col col-2>
+          <button (click)="updateQtdProduct(item)">Atualizar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+</ion-content>
